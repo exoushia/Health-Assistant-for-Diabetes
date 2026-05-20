@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RecipeSchema",
+  "type": "object",
+  "required": [
+    "recipe_id",
+    "name",
+    "meal_type",
+    "veg",
+    "calories",
+    "protein",
+    "fat",
+    "carbs",
+    "fiber",
+    "sugar",
+    "diabetes_score",
+    "summary",
+    "ingredients",
+    "steps",
+    "source_url"
+  ],
+  "properties": {
+    "recipe_id": { "type": "string" },
+    "name": { "type": "string" },
+    "meal_type": { "type": "string" },
+    "veg": { "type": "boolean" },
+    "calories": { "type": "number" },
+    "protein": { "type": "number" },
+    "fat": { "type": "number" },
+    "carbs": { "type": "number" },
+    "fiber": { "type": "number" },
+    "sugar": { "type": "number" },
+    "diabetes_score": { "type": "number" },
+    "summary": { "type": "string" },
+    "ingredients": { "type": "array", "items": { "type": "string" } },
+    "steps": { "type": "array", "items": { "type": "string" } },
+    "source_url": { "type": "string" }
+  },
+  "additionalProperties": false
+}
