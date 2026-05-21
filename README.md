@@ -27,37 +27,7 @@ Python 3.10+. You need Tesseract installed locally (`brew install tesseract` on 
 ---
 
 ## How it fits together
-
-```mermaid
-flowchart LR
-    subgraph in [You]
-        PDF[Lab PDF]
-        UI[Gradio]
-        WA[WhatsApp]
-    end
-
-    subgraph app [Repo root]
-        API[FastAPI]
-        COP[HealthCopilot]
-        AG[WorkflowOrchestrator]
-        TOOLS[tools/*]
-        DATA[(JSON data/)]
-    end
-
-    subgraph out [External]
-        OAI[OpenAI]
-        SAR[Sarvam]
-        TW[Twilio]
-    end
-
-    PDF --> UI --> API --> COP
-    WA --> API
-    COP --> TOOLS
-    COP --> AG --> OAI
-    TOOLS --> DATA
-    COP --> SAR
-    COP --> TW
-```
+![How the Health Assistant fits together](README_image.png)
 
 **`HealthCopilot`** (`orchestrator/copilot.py`) is the spine. It runs steps in order and logs each one. **`WorkflowOrchestrator`** (`orchestrator/agent.py`) only kicks in for feedback — classify intent, block ingredients, rerank affected slots, patch the plan.
 
